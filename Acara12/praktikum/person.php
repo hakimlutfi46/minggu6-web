@@ -1,72 +1,58 @@
 <?php
-interface Person
+abstract class Person
 {
-    public function greeting();
-}
-
-abstract class SayHello
-{
-    abstract function Hello();
-}
-
-class English extends SayHello implements Person
-{
-    private $name;
-
-    public function __construct($name)
-    {
-        $this->name = $name;
-    }
-    public function greeting()
-    {
-        return "Hello " . $this->name;
-    }
-
-    public function Hello()
-    {
-        return ", how are you!";
-    }
-}
-
-class German extends SayHello implements Person
-{
-
-    private $name;
+    public $name;
 
     public function __construct($name)
     {
         $this->name = $name;
     }
 
-    public function greeting()
+    abstract function greeting();
+}
+
+interface Language
+{
+    public function sayHai();
+}
+
+class English extends Person implements Language
+{
+
+    public function sayHai()
     {
-        return "Hello " . $this->name;
+        return "Hello ";
     }
 
-    public function Hello()
+    public function greeting()
     {
-        return ", wie geht es dir!";
+        return ", how are you?";
     }
 }
 
-class French extends SayHello implements Person
+class German extends Person implements Language
 {
-
-    private $name;
-
-    public function __construct($name)
+    public function sayHai()
     {
-        $this->name = $name;
+        return "Hello ";
     }
 
     public function greeting()
     {
-        return "Bonjour " . $this->name;
+        return ", wie geht es dir?";
+    }
+}
+
+class French extends Person implements Language
+{
+    public function sayHai()
+    {
+        return "Bonjour ";
     }
 
-    public function Hello()
+    public function greeting()
     {
-        return ", comment vas-tu!";
+        return ", comment vas-tu?";
     }
 }
 
@@ -77,7 +63,6 @@ $french = new French("Hakim");
 $language = array($english, $german, $french);
 
 foreach ($language as $l) {
-    echo $l->greeting();
-    echo $l->Hello();
+    echo $l->sayHai() . $l->name . $l->greeting();
     echo "<br>";
 }
