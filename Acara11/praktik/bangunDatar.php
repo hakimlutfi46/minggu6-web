@@ -55,7 +55,7 @@ class Segitiga implements bangunDatar
     }
 }
 
-$segitiga = new Segitiga(32, 50);
+$segitiga = new Segitiga(5, 8);
 $persegi = new Persegi(20);
 $lingkaran = new Lingkaran(7);
 
