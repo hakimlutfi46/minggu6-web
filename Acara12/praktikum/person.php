@@ -56,9 +56,9 @@ class French extends Person implements Language
     }
 }
 
-$english = new English("Hakim");
-$german = new German("Hakim");
-$french = new French("Hakim");
+$english = new English("Shaw");
+$german = new German("Ter Stegen");
+$french = new French("Mbappe");
 
 $language = array($english, $german, $french);
 
