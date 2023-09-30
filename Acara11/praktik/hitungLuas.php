@@ -22,33 +22,39 @@ class Persegi implements hitungLuas
 
     public function hitungLuasSegitiga()
     {
+        return 0;
     }
 
     public function hitungLuasLingkaran()
     {
+        return 0;
     }
 }
 
 class Segitiga implements hitungLuas
 {
-    private $sisi;
+    private $a;
+    private $t;
 
-    public function __construct($sisi)
+    public function __construct($a, $t)
     {
-        $this->sisi = $sisi;
-    }
-
-    public function hitungLuasPersegi()
-    {
+        $this->a = $a;
+        $this->t = $t;
     }
 
     public function hitungLuasSegitiga()
     {
-        return (sqrt(3) / 4) * $this->sisi * $this->sisi;
+        return 0.5 * $this->a * $this->t;
+    }
+
+    public function hitungLuasPersegi()
+    {
+        return 0;
     }
 
     public function hitungLuasLingkaran()
     {
+        return 0;
     }
 }
 
@@ -63,10 +69,12 @@ class Lingkaran implements hitungLuas
 
     public function hitungLuasPersegi()
     {
+        return 0;
     }
 
     public function hitungLuasSegitiga()
     {
+        return 0;
     }
 
     public function hitungLuasLingkaran()
@@ -75,9 +83,9 @@ class Lingkaran implements hitungLuas
     }
 }
 
-$persegi = new Persegi(5);
-$segitiga = new Segitiga(6);
-$lingkaran = new Lingkaran(4);
+$segitiga = new Segitiga(5, 8);
+$persegi = new Persegi(20);
+$lingkaran = new Lingkaran(7);
 
 echo "Luas Persegi: " . $persegi->hitungLuasPersegi() . "<br>";
 echo "Luas Segitiga: " . $segitiga->hitungLuasSegitiga() . "<br>";

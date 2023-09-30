@@ -22,7 +22,6 @@ class Persegi implements bangunDatar
 
 class Lingkaran implements bangunDatar
 {
-    private $pi = 3.14;
     private $r;
 
     public function __construct($r)
@@ -32,7 +31,7 @@ class Lingkaran implements bangunDatar
 
     public function hitungLuas()
     {
-        $luas = $this->pi * $this->r * $this->r;
+        $luas = pi() * $this->r * $this->r;
         return "Luas Lingkaran : " . $luas;
     }
 }
